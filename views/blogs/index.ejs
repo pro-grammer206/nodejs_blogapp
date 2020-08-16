@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+<body>
+    
+    
+            <%- include('../partials/nav.ejs')  %>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            
+            <% if(blogs.length>0){%>
+                <% blogs.forEach(blog =>{%>
+                    <div class="container">
+                    <div class="row">
+                        <div class="col s6">
+                          <div class="card cyan lighten-4">
+                            <div class="card-content blue-text">
+                                <span class="card-title center-align"><i><b><%= blog.title%></b></i></span>
+                                <p class="center-align"><%=blog.snippet%></p>
+                            </div>
+                            <div class="card-action">
+                             <a class="single" href="/blogs/<%= blog._id %>">Click</a>
+                            </div>
+                             </div>
+                             </div>
+                             </div>
+                    </div>
+            </div>
+                                
+        
+        
+
+                    <% }) %>
+              <% }else{%>
+                <p> There are no blogs to display</p>
+              
+              <% }%>
+            
+        </div>
+
+        <%- include('../partials/footer.ejs')%>
+</body>
+</html>
